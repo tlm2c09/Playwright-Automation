@@ -1,0 +1,2 @@
+{"level":"error","message":"Error Body: {\n  \"message\": \"Resource not accessible by personal access token\",\n  \"documentation_url\": \"https://docs.github.com/rest/issues/issues#update-an-issue\",\n  \"status\": \"403\"\n}\n","service":"ApiClient","timestamp":"2025-12-20 00:23:01"}
+{"level":"error","message":"Error Body: {\n  \"message\": \"Resource not accessible by personal access token\",\n  \"documentation_url\": \"https://docs.github.com/rest/issues/issues#update-an-issue\",\n  \"status\": \"403\"\n}\n","service":"ApiClient","timestamp":"2025-12-20 00:34:17"}

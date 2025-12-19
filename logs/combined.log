@@ -1,0 +1,31 @@
+{"level":"info","message":"[POST] /repos/tlm2c09/Selenium-Using-Java-And-Cucumber/issues","service":"ApiClient","timestamp":"2025-12-20 00:13:03"}
+{"level":"info","message":"Status: 201 Created","service":"ApiClient","timestamp":"2025-12-20 00:13:03"}
+{"level":"info","message":"[POST] /repos/tlm2c09/Selenium-Using-Java-And-Cucumber/issues","service":"ApiClient","timestamp":"2025-12-20 00:16:16"}
+{"level":"info","message":"Payload: {\n  \"title\": \"Corrupti arx aegrus est.\",\n  \"body\": \"Crepusculum tempora canonicus. Verbum stips aestus accusator sequi confero. Cinis conitor vox cupiditate adflicto turba admiratio.\\nDefluo subvenio supellex addo talio denuo volo aqua audio cultura. Adficio distinctio custodia conturbo cum dicta esse antiquus vester. Sapiente videlicet pauper taceo adsum absorbeo.\",\n  \"labels\": [\n    \"bug\",\n    \"improvement\"\n  ]\n}","service":"ApiClient","timestamp":"2025-12-20 00:16:16"}
+{"level":"info","message":"Status: 201 Created","service":"ApiClient","timestamp":"2025-12-20 00:16:16"}
+{"level":"info","message":"[POST] /repos/tlm2c09/Selenium-Using-Java-And-Cucumber/issues","service":"ApiClient","timestamp":"2025-12-20 00:23:01"}
+{"level":"info","message":"Payload: {\n  \"title\": \"Amitto quidem ara degero turbo tepesco acquiro.\",\n  \"body\": \"Commodo patrocinor cruentus pauper timidus thesaurus. Constans cado cohaero defendo derelinquo. Spectaculum aeternus copia cenaculum adulescens quibusdam decor beneficium.\\nColligo auditor quisquam tabernus. Vos surculus sulum facere conicio thesaurus collum comedo deprimo corporis. Catena comitatus capitulus adhaero viscus quidem arcesso articulus vulgivagus.\",\n  \"labels\": [\n    \"bug\",\n    \"improvement\"\n  ]\n}","service":"ApiClient","timestamp":"2025-12-20 00:23:01"}
+{"level":"info","message":"Status: 201 Created","service":"ApiClient","timestamp":"2025-12-20 00:23:01"}
+{"level":"info","message":"[POST] /repos/tlm2c09/Selenium-Using-Java-And-Cucumber/issues/7","service":"ApiClient","timestamp":"2025-12-20 00:23:01"}
+{"level":"info","message":"Payload: {\n  \"state\": \"closed\"\n}","service":"ApiClient","timestamp":"2025-12-20 00:23:01"}
+{"level":"info","message":"Status: 403 Forbidden","service":"ApiClient","timestamp":"2025-12-20 00:23:01"}
+{"level":"error","message":"Error Body: {\n  \"message\": \"Resource not accessible by personal access token\",\n  \"documentation_url\": \"https://docs.github.com/rest/issues/issues#update-an-issue\",\n  \"status\": \"403\"\n}\n","service":"ApiClient","timestamp":"2025-12-20 00:23:01"}
+{"level":"info","message":"[POST] /repos/tlm2c09/Selenium-Using-Java-And-Cucumber/issues","service":"ApiClient","timestamp":"2025-12-20 00:32:21"}
+{"level":"info","message":"Payload: {\n  \"title\": \"Accendo stultus cavus conatus cibo.\",\n  \"body\": \"Demum vestrum aetas vehemens suscipit. Iure compono utrum delicate crebro alveus peior. Cuius adversus tamisium architecto cito tabula campana colo tergo tabella.\\nTersus adfero censura. Thermae ascit desolo aduro admoneo velum. Traho ascisco paulatim basium corroboro agnitio ascit.\",\n  \"labels\": [\n    \"bug\",\n    \"improvement\"\n  ]\n}","service":"ApiClient","timestamp":"2025-12-20 00:32:21"}
+{"level":"info","message":"Status: 201 Created","service":"ApiClient","timestamp":"2025-12-20 00:32:21"}
+{"level":"info","message":"[POST] /repos/tlm2c09/Selenium-Using-Java-And-Cucumber/issues/8","service":"ApiClient","timestamp":"2025-12-20 00:34:17"}
+{"level":"info","message":"Payload: {\n  \"state\": \"closed\"\n}","service":"ApiClient","timestamp":"2025-12-20 00:34:17"}
+{"level":"info","message":"Status: 403 Forbidden","service":"ApiClient","timestamp":"2025-12-20 00:34:17"}
+{"level":"error","message":"Error Body: {\n  \"message\": \"Resource not accessible by personal access token\",\n  \"documentation_url\": \"https://docs.github.com/rest/issues/issues#update-an-issue\",\n  \"status\": \"403\"\n}\n","service":"ApiClient","timestamp":"2025-12-20 00:34:17"}
+{"level":"info","message":"[POST] /repos/tlm2c09/Selenium-Using-Java-And-Cucumber/issues","service":"ApiClient","timestamp":"2025-12-20 00:35:52"}
+{"level":"info","message":"Payload: {\n  \"title\": \"Crastinus voluptate defleo adamo templum cupio.\",\n  \"body\": \"Chirographum admoveo templum caterva theologus adversus adhuc cubo. Numquam stipes adeo ea. Eos clementia aranea celo ater viduo synagoga.\\nCultellus cresco terror urbs tibi eos aureus suggero vacuus. Consequuntur harum xiphias ambitus. Clibanus apto aperiam tolero.\",\n  \"labels\": [\n    \"bug\",\n    \"improvement\"\n  ]\n}","service":"ApiClient","timestamp":"2025-12-20 00:35:52"}
+{"level":"info","message":"Status: 201 Created","service":"ApiClient","timestamp":"2025-12-20 00:35:52"}
+{"level":"info","message":"[POST] /repos/tlm2c09/Selenium-Using-Java-And-Cucumber/issues/9","service":"ApiClient","timestamp":"2025-12-20 00:35:53"}
+{"level":"info","message":"Payload: {\n  \"state\": \"closed\"\n}","service":"ApiClient","timestamp":"2025-12-20 00:35:53"}
+{"level":"info","message":"Status: 200 OK","service":"ApiClient","timestamp":"2025-12-20 00:35:53"}
+{"level":"info","message":"[POST] /repos/tlm2c09/Selenium-Using-Java-And-Cucumber/issues","service":"ApiClient","timestamp":"2025-12-20 00:38:29"}
+{"level":"info","message":"Payload: {\n  \"title\": \"Desino ultio somniculosus.\",\n  \"body\": \"Curto audax synagoga sto cauda summopere pauci. Carus certus abundans arbustum amaritudo casso voluptatem. Absum unde pecto tantillus deserunt conventus numquam tendo.\\nCometes concedo exercitationem compono velum ustilo. Tremo cernuus itaque. Speciosus teneo vulgivagus abbas tribuo volubilis.\",\n  \"labels\": [\n    \"bug\",\n    \"improvement\"\n  ]\n}","service":"ApiClient","timestamp":"2025-12-20 00:38:29"}
+{"level":"info","message":"Status: 201 Created","service":"ApiClient","timestamp":"2025-12-20 00:38:29"}
+{"level":"info","message":"[POST] /repos/tlm2c09/Selenium-Using-Java-And-Cucumber/issues/10","service":"ApiClient","timestamp":"2025-12-20 00:38:30"}
+{"level":"info","message":"Payload: {\n  \"state\": \"closed\"\n}","service":"ApiClient","timestamp":"2025-12-20 00:38:30"}
+{"level":"info","message":"Status: 200 OK","service":"ApiClient","timestamp":"2025-12-20 00:38:30"}
