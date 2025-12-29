@@ -16,11 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read  # For checkout
-      pages: write  # For GitHub Pages deployment
-      id-token: write  # For OIDC token
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     
     steps:
       - name: Checkout Code
@@ -57,30 +52,9 @@ jobs:
           # If your tests use other vars (like username), add them here
           GITHUB_USERNAME: ${{ vars.GH_USERNAME }}
 
-      - name: Generate Allure Report
-        if: always()
-        run: npx allure generate allure-results --clean -o allure-report
-
-      - name: Upload Allure Report to Pages
-        if: always()
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: allure-report
-
-      - name: Deploy to GitHub Pages
-        if: always()
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-      - name: Upload Allure Report as Artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report-artifact
-          path: allure-report/
-          retention-days: 7
-
-      - name: Upload Test Results
+      - name: Upload Test Report
+        # 4. Artifact Storage
+        # Runs even if tests fail so you can see the HTML report
         if: always() 
         uses: actions/upload-artifact@v4
         with:
