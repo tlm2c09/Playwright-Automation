@@ -348,6 +348,25 @@ Node.js >= 18
 npm >= 9
 ```
 
+### CI/CD Setup (GitHub Actions)
+
+This project includes a comprehensive GitHub Actions workflow (`.github/workflows/api-regression-tests.yml`) designed for automated regression testing.
+
+**Workflow Steps:**
+1.  **Trigger**: Runs automatically Mon-Fri at 00:00 UTC, or can be triggered manually.
+2.  **Setup**: Configures Node.js environment and installs dependencies.
+3.  **Test Execution**: Runs the full Playwright API test suite.
+4.  **Reporting**: Uploads the HTML test report as a build artifact (retained for 7 days).
+5.  **Notification**: Sends a status update to Slack with a direct link to the results.
+
+**Required Secrets:**
+To enable the workflow and notifications, add the following secrets in your GitHub repository settings:
+
+| Secret Name | Description | Required For |
+| :--- | :--- | :--- |
+| `GH_PAT` | GitHub Personal Access Token for API authentication | Running Tests |
+| `SLACK_WEBHOOK` | Slack Incoming Webhook URL | Slack Notifications |
+
 ### Installation
 ```bash
 # Install dependencies
