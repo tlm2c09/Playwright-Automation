@@ -1,6 +1,13 @@
 import { expect } from '@playwright/test';
 import { z, ZodType } from 'zod';
 
+/**
+ * A matcher that checks if the received value matches the provided Zod schema.
+ * It returns a Playwright matcher object with a custom message if the validation fails.
+ * @param received - The value to validate against the schema
+ * @param schema - The Zod schema to validate against
+ * @returns A matcher object with a custom error message
+ */
 export const toMatchSchema = (received: any, schema: ZodType) => {
   const result = schema.safeParse(received);
 
