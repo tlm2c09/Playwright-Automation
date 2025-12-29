@@ -9,12 +9,6 @@ on:
   
   # 2. Manual Trigger (Vital for debugging the workflow itself)
   workflow_dispatch:
-    inputs:
-      branch:
-        description: 'Branch to run tests against'
-        required: true
-        type: string
-        default: 'main'
 
 jobs:
   run-api-tests:
@@ -26,17 +20,11 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.inputs.branch || github.ref}}
       
       - name: Validate GH Secrets
         run: |
           if [ -z "${{ secrets.GH_PAT }}" ]; then
             echo "Error: GH_PAT secret is not set."
-            exit 1
-          fi
-          if [ -z "${{ vars.GH_USERNAME }}" ]; then
-            echo "Error: GH_USERNAME variable is not set."
             exit 1
           fi
 
