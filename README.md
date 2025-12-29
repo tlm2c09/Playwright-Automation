@@ -338,7 +338,7 @@ import { IssueSchema } from '../src/schemas/IssueSchema';
 - ✅ Avoid `any` (use `unknown` if necessary)
 - ✅ Export types alongside implementations
 
----
+----
 
 ## 🚀 Getting Started
 
