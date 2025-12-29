@@ -1,0 +1,75 @@
+name: API Regression Tests
+
+on:
+  # 1. Schedule Trigger
+  schedule:
+    # "At 00:00 UTC on Monday to Friday"
+    # Cron syntax: Minute Hour DayMonth Month DayWeek(1=Mon, 5=Fri)
+    - cron: '0 0 * * 1,2,3,4,5'
+  
+  # 2. Manual Trigger (Vital for debugging the workflow itself)
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to run tests against'
+        required: true
+        type: string
+        default: 'main'
+
+jobs:
+  run-api-tests:
+    name: Run API Regression Tests
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read  # For checkout
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || github.ref}}
+      
+      - name: Validate GH Secrets
+        run: |
+          if [ -z "${{ secrets.GH_PAT }}" ]; then
+            echo "Error: GH_PAT secret is not set."
+            exit 1
+          fi
+          if [ -z "${{ vars.GH_USERNAME }}" ]; then
+            echo "Error: GH_USERNAME variable is not set."
+            exit 1
+          fi
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Install Playwright
+        # Note: For pure API tests, browser binaries aren't strictly needed, 
+        # but this prevents config errors if your playwright.config.ts lists browsers.
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Playwright Tests
+        run: npx playwright test
+        env:
+          # 3. Inject Secrets
+          # We map the repository secrets to the ENV vars our Config Helper expects
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }} 
+          GITHUB_API_URL: 'https://api.github.com'
+          # If your tests use other vars (like username), add them here
+          GITHUB_USERNAME: ${{ vars.GH_USERNAME }}
+
+      - name: Upload Test Report
+        # 4. Artifact Storage
+        # Runs even if tests fail so you can see the HTML report
+        if: always() 
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
