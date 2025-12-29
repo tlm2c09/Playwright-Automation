@@ -1,5 +1,5 @@
 import { APIRequestContext, APIResponse } from "@playwright/test";
-import { Logger } from "./Logger";
+import { Logger } from "./logger";
 
 export class ApiClient {
     private logger: Logger;

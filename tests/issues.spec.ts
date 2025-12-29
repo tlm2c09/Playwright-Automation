@@ -1,10 +1,8 @@
 import { test, expect } from '../src/fixtures/test'; // Import from OUR fixture
-import { IssueFactory } from '../src/factories/IssueFactory';
-import { IssueSchema } from '../src/schemas/IssueSchema';
+import { IssueFactory } from '../src/factories/issue-factory';
+import { IssueSchema } from '../src/schemas/issue-schema';
 import '../src/lib/expectSchema'; // To load toMatchSchema
-
-const REPO = 'Selenium-Using-Java-And-Cucumber';
-const OWNER = 'tlm2c09';
+import { OWNER, REPO } from '../src/constants/general-constants';
 
 test.describe('GitHub Issues API', () => {
 

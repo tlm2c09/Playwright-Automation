@@ -1,5 +1,5 @@
-import { ApiClient } from "../lib/ApiClient";
-import { IssueService } from "../services/IssueService";
+import { ApiClient } from "../lib/api-client";
+import { IssueService } from "../services/issue-service";
 import { test as base } from '@playwright/test';
 
 type MyFixtures = {
