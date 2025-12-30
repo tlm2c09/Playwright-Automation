@@ -1,6 +1,6 @@
-# Playwright API Testing Framework with TypeScript
+# Playwright Testing Framework with TypeScript
 
-A robust, scalable API testing framework built with Playwright, TypeScript, and Zod for schema validation. This framework follows industry best practices with a layered architecture for maintainability and extensibility.
+A robust, scalable testing framework built with Playwright, TypeScript, and Zod for schema validation. This framework supports both **API testing** and **browser automation**, following industry best practices with a layered architecture for maintainability and extensibility.
 
 ---
 
@@ -307,38 +307,53 @@ test('should create an issue', async ({ issueService }) => {
 ## 📜 Coding Conventions
 
 ### File Naming
-- **Services**: `{Entity}Service.ts` → `IssueService.ts`
-- **Factories**: `{Entity}Factory.ts` → `IssueFactory.ts`
-- **Schemas**: `{Entity}Schema.ts` → `IssueSchema.ts`
-- **Tests**: `{feature}.spec.ts` → `issue-crud.spec.ts`
+- **Services**: `{entity}-service.ts` (kebab-case) → `issue-service.ts`
+- **Factories**: `{entity}-factory.ts` (kebab-case) → `issue-factory.ts`
+- **Schemas**: `{entity}-schema.ts` (kebab-case) → `issue-schema.ts`
+- **Tests**: `{feature}.spec.ts` (kebab-case) → `issues.spec.ts`
+- **Utilities/Lib**: `{purpose}.ts` (kebab-case) → `api-client.ts`, `expect-schema.ts`
 
 ### Class & Method Naming
 - **Classes**: PascalCase → `IssueService`, `ApiClient`
-- **Methods**: camelCase → `createIssue()`, `getIssues()`
-- **Constants**: UPPER_SNAKE_CASE → `GITHUB_TOKEN`, `BASE_URL`
+- **Methods**: camelCase → `createIssue()`, `getIssues()`, `sendPostRequest()`
+- **Constants**: UPPER_SNAKE_CASE → `GITHUB_TOKEN`, `BASE_URL`, `OWNER`, `REPO`
+- **Interfaces**: PascalCase with I prefix optional → `IssuePayload` or `RequestOptions`
 
 ### Imports Order
 ```typescript
 // 1. External libraries
 import { test, expect } from '@playwright/test';
 import { faker } from '@faker-js/faker';
+import { APIRequestContext, APIResponse } from '@playwright/test';
 
-// 2. Framework components
-import { IssueService } from '../src/services/IssueService';
-import { IssueFactory } from '../src/factories/IssueFactory';
+// 2. Framework components (lib, services, factories)
+import { IssueService } from '../services/issue-service';
+import { IssueFactory } from '../factories/issue-factory';
+import { ApiClient } from '../lib/api-client';
 
-// 3. Schemas & utilities
-import { IssueSchema } from '../src/schemas/IssueSchema';
+// 3. Schemas & constants
+import { IssueSchema } from '../schemas/issue-schema';
+import { OWNER, REPO } from '../constants/general-constants';
+
+// 4. Custom extensions (e.g., matchers)
+import '../lib/expectSchema';
 ```
 
 ### TypeScript Best Practices
-- ✅ Use `interface` for data structures
-- ✅ Use `type` for unions/intersections
-- ✅ Enable strict mode in `tsconfig.json`
-- ✅ Avoid `any` (use `unknown` if necessary)
-- ✅ Export types alongside implementations
+- ✅ Use `interface` for data structures (especially API payloads and responses)
+- ✅ Use `type` for unions, intersections, and type aliases
+- ✅ Enable strict mode in `tsconfig.json` for type safety
+- ✅ Avoid `any` (use `unknown` if necessary, but prefer specific types)
+- ✅ Export types and interfaces alongside implementations
+- ✅ Add JSDoc comments for public methods with parameters and return types
+- ✅ Use private/protected modifiers for internal methods (e.g., `buildEndpoint()`)
 
----
+### Code Organization
+- **Services**: Keep endpoint building logic separate via private methods (e.g., `buildIssuesEndpoint()`)
+- **Factories**: Use `static` methods for creating test data
+- **Spacing**: 2-space indentation for consistency with existing code
+
+----
 
 ## 🚀 Getting Started
 
@@ -600,10 +615,10 @@ async sendPatchRequest(path: string, data: any) {
 
 ## 📝 License
 
-ISC
+This project is licensed under the MIT License - feel free to use it as a reference or template for your own testing frameworks.
 
 ---
 
 ## 👥 Support
 
-For questions or issues, please contact the team or create an issue in the repository.
+This is a reference implementation of a comprehensive testing framework built with Playwright and TypeScript, supporting both API testing and browser automation. Feel free to fork, modify, and use as a template for your own projects. For issues or questions, please create an issue in the repository.
